@@ -1,6 +1,7 @@
 package com.gavag.helpdesk.services;
 
 import com.gavag.helpdesk.domain.Tecnico;
+import com.gavag.helpdesk.domain.dtos.TecnicoDTO;
 import com.gavag.helpdesk.repositories.TecnicoRepository;
 import com.gavag.helpdesk.services.exceptions.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,10 +18,16 @@ public class TecnicoService {
 
     public Tecnico findById(Integer id) {
         Optional<Tecnico> obj = repository.findById(id);
-        return obj.orElseThrow(() -> new ObjectNotFoundException("Técnico com o id: " + id + " não encontrado!"));
+        return obj.orElseThrow(() -> new ObjectNotFoundException("Técnico com o ID: " + id + " não encontrado!"));
     }
 
     public List<Tecnico> findAll() {
         return repository.findAll();
+    }
+
+    public Tecnico create(TecnicoDTO objDTO) {
+        objDTO.setId(null);
+        Tecnico newObj = new Tecnico(objDTO);
+        return repository.save(newObj);
     }
 }
