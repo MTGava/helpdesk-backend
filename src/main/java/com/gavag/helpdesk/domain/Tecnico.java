@@ -1,5 +1,6 @@
 package com.gavag.helpdesk.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.gavag.helpdesk.domain.enums.Perfil;
 import lombok.Getter;
 import lombok.Setter;
@@ -15,6 +16,7 @@ public class Tecnico extends Pessoa {
 
     private static final long serialVersionUID = 1L;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "tecnico")
     private List<Chamado> chamados = new ArrayList<>();
 
