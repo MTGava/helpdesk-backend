@@ -2,7 +2,6 @@ package com.gavag.helpdesk.domain;
 
 import com.gavag.helpdesk.domain.enums.Perfil;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.Entity;

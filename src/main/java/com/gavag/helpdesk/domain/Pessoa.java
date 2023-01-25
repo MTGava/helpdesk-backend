@@ -2,9 +2,18 @@ package com.gavag.helpdesk.domain;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.gavag.helpdesk.domain.enums.Perfil;
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
-import javax.persistence.*;
+import javax.persistence.CollectionTable;
+import javax.persistence.Column;
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.HashSet;
