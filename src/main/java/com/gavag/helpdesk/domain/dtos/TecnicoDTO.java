@@ -8,6 +8,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -20,9 +21,17 @@ public class TecnicoDTO implements Serializable {
     private static final long serialVersionUID = 1L;
 
     protected Integer id;
+
+    @NotNull(message = "Campo NOME é requerido!")
     protected String nome;
-    protected String cpf;
+
+    @NotNull(message = "Campo EMAIL é requerido!")
     protected String email;
+
+    @NotNull(message = "Campo CPF é requerido!")
+    protected String cpf;
+
+    @NotNull(message = "Campo SENHA é requerido!")
     protected String senha;
     protected Set<Integer> perfis = new HashSet<>();
     @JsonFormat(pattern = "dd/MM/yyyy")
