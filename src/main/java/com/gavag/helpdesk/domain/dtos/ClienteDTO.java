@@ -7,6 +7,9 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.br.CPF;
+
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -27,6 +30,7 @@ public class ClienteDTO implements Serializable {
     protected String email;
 
     @NotNull(message = "Campo CPF é requerido!")
+    @CPF
     protected String cpf;
 
     @NotNull(message = "Campo SENHA é requerido!")

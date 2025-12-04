@@ -5,7 +5,6 @@ import com.gavag.helpdesk.domain.enums.Perfil;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import org.hibernate.validator.constraints.br.CPF;
 
 import javax.persistence.CollectionTable;
 import javax.persistence.Column;
@@ -34,7 +33,6 @@ public abstract class Pessoa implements Serializable {
     protected Integer id;
     protected String nome;
 
-    @CPF
     @Column(unique = true)
     protected String cpf;
 

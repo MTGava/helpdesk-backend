@@ -1,19 +1,21 @@
 package com.gavag.helpdesk.domain.dtos;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.gavag.helpdesk.domain.Tecnico;
-import com.gavag.helpdesk.domain.enums.Perfil;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
-import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
+
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.br.CPF;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.gavag.helpdesk.domain.Tecnico;
+import com.gavag.helpdesk.domain.enums.Perfil;
+
+import lombok.Getter;
+import lombok.Setter;
 
 @Getter @Setter
 public class TecnicoDTO implements Serializable {
@@ -29,6 +31,7 @@ public class TecnicoDTO implements Serializable {
     protected String email;
 
     @NotNull(message = "Campo CPF é requerido!")
+    @CPF
     protected String cpf;
 
     @NotNull(message = "Campo SENHA é requerido!")
